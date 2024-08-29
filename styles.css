@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ecf0f1;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: background 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+.tile:hover {
+    background: #bdc3c7;
+}
+
+.selected {
+    background: #d4edda;
+    border: 2px solid #c3e6cb;
+    transform: scale(1.1);
+}
+
+.invalid {
+    background: #f8d7da;
+    border: 2px solid #f5c6cb;
+}
+
+.removed {
+    opacity: 0.2; /* Set opacity to 0.2 to make them barely visible */
+    color: transparent; /* Make text transparent */
+}
+
+.score-timer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.score, .timer {
+    font-size: 18px;
+    color: #333;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.control-btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+@keyframes valid-selection {
+    0% { background: #d4edda; }
+    50% { background: #2ecc71; }
+    100% { background: #d4edda; }
+}
+
+.selected.valid {
+    animation: valid-selection 1s ease;
+}
