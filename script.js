@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeGrid() {
         gridElement.innerHTML = '';
-        for (let i = 0; i < 10; i++) {
-            for (let j = 0; j < 10; j++) {
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
                 const tile = document.createElement('div');
                 tile.classList.add('tile');
                 tile.textContent = generateWeightedRandomNumber();
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = Math.min(startRow, endRow); i <= Math.max(startRow, endRow); i++) {
                 for (let j = Math.min(startCol, endCol); j <= Math.max(startCol, endCol); j++) {
-                    const currentTile = gridElement.children[i * 10 + j];
+                    const currentTile = gridElement.children[i * 8 + j];
                     if (currentTile) {  // Ensure currentTile is defined
                         currentTile.classList.add('selected');
                         selectedTiles.push(currentTile);
